@@ -75,7 +75,7 @@ public class cardHolder{
             Console.WriteLine("Your new balance is: " + currentUser.getBalance());
             
         }
-        
+
         //we also need a fucntion to manage withdrawals
         void withdrawals(cardHolder currentUser){
             Console.WriteLine("How much would you like to withdraw?");
@@ -87,8 +87,10 @@ public class cardHolder{
                 currentUser.setBalance(currentUser.getBalance() - withdrawAmount);
                 Console.WriteLine("Your new balance is: " + currentUser.getBalance());
             }
-            currentUser.setBalance(withdraw - currentUser.getBalance()); //CHECK THIS
-            Console.WriteLine("Your new balance is: " + currentUser.getBalance());
+
+        
+        List<cardHolder> cardHolders = new List<cardHolder> ();
+        
             
         }
         
