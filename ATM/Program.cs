@@ -41,7 +41,7 @@ public class cardHolder{
     {
         return balance;
     }
-
+//-----------------------------------------------------------------
     public void setNum(string cardNum)
     {
         cardNum = newCardNum;
@@ -81,6 +81,7 @@ public class cardHolder{
             Console.WriteLine("How much would you like to deposit?");
             double depositAmount = Convert.ToDouble(Console.ReadLine());
             //Console.ReadLine() reads the input from the user.
+            currentUser.setBalance(deposit);
             
         }
         
