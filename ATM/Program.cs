@@ -1,7 +1,5 @@
 ﻿using System;
-
 public class cardHolder{
-
     string cardNum;
     int pin;
     string firstName;
@@ -21,22 +19,18 @@ public class cardHolder{
     {
         return cardNum;
     }
-
     public int getPin()
     {
         return pin;
     }
-
     public string getFirstName()
     {
         return firstName;
     }
-
     public string getLastName()
     {
         return lastName;
     }
-
     public double getBalance()
     {
         return balance;
@@ -45,14 +39,11 @@ public class cardHolder{
     public void setNum(string cardNum)
     {
         cardNum = newCardNum;
-
     }
-    
     public void setPin(int pin)
     {
         pin = newPin;
     }
-
     public void setFirstName(string firstName)
     {
         firstName = newFirstName;
@@ -65,7 +56,6 @@ public class cardHolder{
     {
         balance = newBalance;
     }
-
     public static void Main (string[] args)
     {
         void printOptions()
@@ -81,7 +71,24 @@ public class cardHolder{
             Console.WriteLine("How much would you like to deposit?");
             double depositAmount = Convert.ToDouble(Console.ReadLine());
             //Console.ReadLine() reads the input from the user.
-            currentUser.setBalance(deposit);
+            currentUser.setBalance(depositAmount + currentUser.getBalance()); //CHECK THIS
+            Console.WriteLine("Your new balance is: " + currentUser.getBalance());
+            
+        }
+        
+        //we also need a fucntion to manage withdrawals
+        void withdrawals(cardHolder currentUser){
+            Console.WriteLine("How much would you like to withdraw?");
+            double withdrawAmount = Convert.ToDouble(Console.ReadLine());
+            if (withdrawAmount > currentUser.getBalance()){
+                Console.WriteLine("You do not have enough money in your account to withdraw that amount.");
+            }
+            else{
+                currentUser.setBalance(currentUser.getBalance() - withdrawAmount);
+                Console.WriteLine("Your new balance is: " + currentUser.getBalance());
+            }
+            currentUser.setBalance(withdraw - currentUser.getBalance()); //CHECK THIS
+            Console.WriteLine("Your new balance is: " + currentUser.getBalance());
             
         }
         
