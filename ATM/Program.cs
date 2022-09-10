@@ -80,7 +80,7 @@ public class cardHolder{
         void deposit(cardHolder currentUser){
             Console.WriteLine("How much would you like to deposit?");
             double depositAmount = Convert.ToDouble(Console.ReadLine());
-            //Console.ReadLine() reads the input from the user
+            //Console.ReadLine() reads the input from the user.
             
         }
         
