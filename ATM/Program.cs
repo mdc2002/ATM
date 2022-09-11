@@ -90,7 +90,13 @@ public class cardHolder{
 
         
         List<cardHolder> cardHolders = new List<cardHolder> ();
+        cardHolders.Add(new cardHolder("41744678989854", 2396, "Mario", "Chiavaro", 852.98));
+        cardHolders.Add(new cardHolder("4135234244368849",2232,"John", "Travolta", 132.22));
+        cardHolders.Add(new cardHolder("4135234244368849", 4259, "Dennis", "Jones", 999.99));
+        cardHolders.Add(new cardHolder("4135234244368849", 9429, "Alexis", "Sanchez", 300000.12));
         
+
+
             
         }
         
