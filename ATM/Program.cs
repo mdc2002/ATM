@@ -1,4 +1,5 @@
 ﻿using System;
+
 public class cardHolder{
     string cardNum;
     int pin;
@@ -35,7 +36,7 @@ public class cardHolder{
     {
         return balance;
     }
-//-----------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
     public void setNum(string cardNum)
     {
         cardNum = newCardNum;
@@ -87,6 +88,10 @@ public class cardHolder{
                 currentUser.setBalance(currentUser.getBalance() - withdrawAmount);
                 Console.WriteLine("Your new balance is: " + currentUser.getBalance());
             }
+        
+        void balance (cardHolder currentUser){
+            Console.WriteLine ("Current balance: " + currentUser.getBalance());
+        }
 
         
         List<cardHolder> cardHolders = new List<cardHolder> ();
@@ -98,11 +103,11 @@ public class cardHolder{
         //prompt the user to enter their card number
         Console.WriteLine("Please enter your card number: ");
         string cardNum = "";
-       cardHolder currentUser; 
+        cardHolder currentUser; 
 
        //now we want some exception handling:
        //any code that we think will break the program we put it in the try blockand if indeed it breaks it
-       //then it will go and exdecute everything we include in the catch block
+       //then it will go and execute everything we include in the catch block
 
        while(true){
            try{
@@ -112,8 +117,62 @@ public class cardHolder{
            }
            catch{
                Console.WriteLine("Invalid card number. Please try again.");
+               // return the first element of a sequence or a default value if element isn't there
+               currentUser = cardHolders.FirstorDefault(x => x.getNum() == cardNum);
+                if(currentUser == null){
+                     Console.WriteLine("Invalid card number. Please try again.");
+                     continue;
+                }
+                else{
+                     break;
+                }
            }
        }
+
+        Console.WriteLine("Please enter your pin: ");
+        int userPin = 0;
+        
+        while(true){
+            try{
+                userPin = int.Parse(Console.ReadLine());
+                if(userPin != currentUser.getPin()){
+                    Console.WriteLine("Invalid pin. Please try again.");
+                }
+                else{
+                    break;
+                }
+            }
+            catch{
+                Console.WriteLine("Invalid pin. Please try again.");
+            }
+        }
+
+        Console.WriteLine("Welcome" + currentUser.getFirstName() + " " + currentUser.getLastName());
+        int option = 0;
+        do{
+            printOptions();
+            try{
+                option = int.Parse(Console.ReadLine());
+            }
+
+            catch
+            {
+                Console.WriteLine("Invalid option. Please try again.");
+            }
+
+            if (option == 1){balance(currentUser);}
+            else if (option ==2) {withdrawals(currentUser);}
+            else if (option ==3) {deposit(currentUser);}
+            else if (option ==4) {break ;}
+            else { option = 0;}
+        }
+
+        while (option != 4);
+    
+        Console.WriteLine("Thank you for using our ATM. Have a nice day!");
+
+
+
        }
 
     }
