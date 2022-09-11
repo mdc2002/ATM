@@ -95,11 +95,26 @@ public class cardHolder{
         cardHolders.Add(new cardHolder("4135234244368849", 4259, "Dennis", "Jones", 999.99));
         cardHolders.Add(new cardHolder("4135234244368849", 9429, "Alexis", "Sanchez", 300000.12));
         
+        //prompt the user to enter their card number
+        Console.WriteLine("Please enter your card number: ");
+        string cardNum = "";
+       cardHolder currentUser; 
 
+       //now we want some exception handling:
+       //any code that we think will break the program we put it in the try blockand if indeed it breaks it
+       //then it will go and exdecute everything we include in the catch block
 
-            
-        }
-        
+       while(true){
+           try{
+               cardNum = Console.ReadLine();
+               //check against our database (above) to see if the card number is valid
+               
+           }
+           catch{
+               Console.WriteLine("Invalid card number. Please try again.");
+           }
+       }
+       }
 
     }
     
