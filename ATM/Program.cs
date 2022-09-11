@@ -172,7 +172,6 @@ public class cardHolder{
         Console.WriteLine("Thank you for using our ATM. Have a nice day!");
 
 
-
        }
 
     }
